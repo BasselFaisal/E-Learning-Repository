@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Learning</title>
+
+	<!-- Bootstrap CSS and Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" media="all">
+	
+ 	 <link href="/css/styles.css" rel="stylesheet" media="all">  
+ 	 <link href="/css/main.css" rel="stylesheet" media="all">  
+
+	<link rel="icon" href="/assets/images/letter_e_PNG37.ico">
+</head>
+
+<body>
+	<div class="page-wrapper">
+
+		<!-- MENU SIDEBAR-->
+		<aside class="menu-sidebar d-none d-lg-block">
+			<div class="logo">
+				<a th:href="@{/}">
+					<img src="assets/images/letter.png" alt="E learning" class="img-responsive">
+				</a>
+			</div>
+			<div class="menu-sidebar-content js-scrollbar1">
+				<nav class="navbar-sidebar">
+					<ul class="list-unstyled navbar-list">
+						<li>
+							<a th:href="@{/}">➤ Home</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</aside>
+		<!-- END MENU SIDEBAR-->
+
+		<!-- PAGE CONTAINER-->
+		<div class="page-container">
+			<!-- HEADER DESKTOP-->
+			<header class="header-desktop">
+				<div class="section-content section-content-p30">
+					<div class="container-fluid">
+						<div class="header-wrap">
+							<div >
+                 			    <a class="total1" th:href="@{/registration}">Registration</a>
+  							</div>
+							<div class="cart-area d-n">
+								<a href="#">
+									<div class="total">0<span>0</span> </div> <i class="fa fa-shopping-cart"
+										aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+						<div class="account-wrap"></div>
+					</div>
+				</div>
+			</header>
+			<!-- END HEADER DESKTOP-->
+
+			<!-- MAIN CONTENT-->
+			<div class="main-content">
+				<div class="section-content section-content-p30">
+					<div class="container-fluid">
+							<div class="row121">		
+						        <div class="col-md-6 col-md-offset-3">
+						            <h1>Login page</h1>
+						            <form th:action="@{/login}" method="post">
+						                <div th:if="${param.error}">
+						                    <div class="alert alert-danger">
+						                        Invalid username or password.
+						                    </div>
+						                </div>
+						                <div th:if="${param.logout}">
+						                    <div class="alert alert-info">
+						                        You have been logged out.
+						                    </div>
+						                </div>
+						                <div class="form-group">
+						                    <label for="username">Username</label>:
+						                    <input type="text"
+						                           id="username"
+						                           name="username"
+						                           class="form-control"
+						                           autofocus="autofocus"
+						                           placeholder="Username">
+						                </div>
+						                <div class="form-group">
+						                    <label for="password">Password</label>:
+						                    <input type="password"
+						                           id="password"
+						                           name="password"
+						                           class="form-control"
+						                           placeholder="Password">
+						                </div>
+						                <div class="form-group">
+						                        <div class="row justify-content-center">
+						                            <input type="submit"
+						                                   name="login-submit"
+						                                   id="login-submit"
+						                                   class="btn btn-primary justify-content-center"
+						                                   value="Log In">
+						                        </div>
+						                  <div class="row justify-content-center">
+						                        <span>Don't Have Account? 
+						                        <a th:href="@{/registration}"> registere </a>
+						                        </span>
+						                    </div>
+						                </div>
+						            </form>
+						        </div>
+    </div>
+					</div>
+				</div>
+			</div>
+
+		    <!-- END MAIN CONTENT-->
+
+		</div>
+	</div>
+
+	<!-- END PAGE CONTAINER-->
+
+
+	<footer>
+		<ul>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Contact Us</a></li>
+			<li><a href="#">Help</a></li>
+		</ul>
+	</footer>
+
+</body>
+
+</html>
+<!-- end document-->
